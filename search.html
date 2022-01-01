@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrungNimShop</title>
+    <link rel="stylesheet" href="./vendor/bootstrap/bootstrap-4.5.0-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./assets/font/font-awesome-4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <!-- header -->
+    
+    <nav class="navbar navbar-expand-md navbar-dark sticky-top bg-dark">
+        <div class="container">
+           <a class="img-nav" href="index.html" >
+               <img src="./assets/img/valorant-logo-FAB2CA0E55-seeklogo.com.png" alt="">
+           </a>
+        
+            <div class="navbar-collapse collapse" id="navbarCollapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html">Trang chủ <span class="sr-only">(current)</span></a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="products.html">Vũ Khí</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Liên hệ</a>
+                    </li>
+                </ul>
+                <form class="form-inline mt-2 mt-md-0" method="get" action="search.html">
+                    <input class="form-control mr-sm-2" type="text" placeholder="Tìm kiếm" aria-label="Search"
+                        name="keyword_tensanpham">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="color: red;">Tìm kiếm</button>
+                </form>
+            </div>
+            <ul class="navbar-nav px-3">
+                <li class="nav-item text-nowrap">
+                    <a class="nav-link" href="cart.html">Giỏ hàng</a>
+                </li>
+                <li class="nav-item text-nowrap">
+                    <!-- Nếu chưa đăng nhập thì hiển thị nút Đăng nhập -->
+                    <a class="nav-link" href="login.html">Đăng nhập</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="row">
+        <aside class="col-sm-4">
+            <p>Bộ lọc </p>
+            <div class="card">
+                <!-- Tìm kiếm theo tên sản phẩm -->
+                <article class="card-group-item">
+                    <header class="card-header">
+                        <h6 class="title">Tên sản phẩm </h6>
+                    </header>
+                    <div class="filter-content">
+                        <div class="card-body">
+                            <input class="form-control" type="text" placeholder="Tìm kiếm"
+                                aria-label="Search" name="keyword_tensanpham" value="">
+                        </div> <!-- card-body.// -->
+                    </div>
+                </article> <!-- // Tìm kiếm theo Tên sản phẩm -->
+
+                <!-- Tìm kiếm theo Loại sản phẩm -->
+                <article class="card-group-item">
+                    <header class="card-header">
+                        <h6 class="title">Loại sản phẩm </h6>
+                    </header>
+                    <div class="filter-content">
+                        <div class="card-body">
+                            <div class="custom-control custom-checkbox">
+                                <span class="float-right badge badge-light round">5</span>
+                                <input type="checkbox" class="custom-control-input"
+                                    name="keyword_loaisanpham[]" value="1" id="chk-loaisanpham-1">
+                                <label class="custom-control-label" for="chk-loaisanpham-1">SIDEARMS</label>
+                            </div> <!-- form-check.// -->
+                            <div class="custom-control custom-checkbox">
+                                <span class="float-right badge badge-light round">2</span>
+                                <input type="checkbox" class="custom-control-input"
+                                    name="keyword_loaisanpham[]" value="2" id="chk-loaisanpham-2">
+                                <label class="custom-control-label" for="chk-loaisanpham-2">SHOTGUNS</label>
+                            </div> <!-- form-check.// -->
+                            <div class="custom-control custom-checkbox">
+                                <span class="float-right badge badge-light round">4</span>
+                                <input type="checkbox" class="custom-control-input"
+                                    name="keyword_loaisanpham[]" value="3" id="chk-loaisanpham-3">
+                                <label class="custom-control-label" for="chk-loaisanpham-3">RIFLES</label>
+                            </div> <!-- form-check.// -->
+                            <div class="custom-control custom-checkbox">
+                                <span class="float-right badge badge-light round">2</span>
+                                <input type="checkbox" class="custom-control-input"
+                                    name="keyword_loaisanpham[]" value="4" id="chk-loaisanpham-4">
+                                <label class="custom-control-label" for="chk-loaisanpham-4">MACHINE GUNS</label>
+                            </div> <!-- form-check.// -->
+                            <div class="custom-control custom-checkbox">
+                                <span class="float-right badge badge-light round">2</span>
+                                <input type="checkbox" class="custom-control-input"
+                                    name="keyword_loaisanpham[]" value="5" id="chk-loaisanpham-5">
+                                <label class="custom-control-label" for="chk-loaisanpham-5">SNIPER RIFLES</label>
+                            </div> <!-- form-check.// -->
+                            <div class="custom-control custom-checkbox">
+                                <span class="float-right badge badge-light round">1</span>
+                                <input type="checkbox" class="custom-control-input"
+                                    name="keyword_loaisanpham[]" value="6" id="chk-loaisanpham-6">
+                                <label class="custom-control-label" for="chk-loaisanpham-6">Melee</label>
+                            </div> <!-- form-check.// -->
+                        </div> <!-- card-body.// -->
+                    </div>
+                </article> <!-- // Tìm kiếm theo Loại sản phẩm -->
+                <div class="col-sm-8 mt-2">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h6>Tìm kiếm được 16 sản phẩm</h6>
+                        </div>
+                    </div>
+                    <div class="row">
+
+                        <div class="col-md-6">
+                            <div class="card mb-4 shadow-sm">
+                                <a href="product-detail.html">
+                                    <img class="bd-placeholder-img card-img-top" width="100%" height="350"
+                                        src="assets/img/Ares.png">
+                                </a>
+                                <div class="card-body">
+                                    <a href="product-detail.html">
+                                        <h5>Ares</h5>
+                                    </a>
+                                    <h6>MACHINE GUNS</h6>
+                                    <p class="card-text">Aim down sights</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="btn-group">
+                                            <a class="btn btn-sm btn-outline-secondary"
+                                                href="product-detail.html">Xem chi tiết</a>
+                                        </div>
+                                        <small class="text-muted text-right">
+                                            
+                                            <b>1550</b>
+                                        </small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+        
+                                    <div class="col-md-6">
+                                        <div class="card mb-4 shadow-sm">
+                                            <a href="product-detail.html">
+                                                <img class="bd-placeholder-img card-img-top" width="100%" height="350"
+                                                    src="assets/img/Odin.png">
+                                            </a>
+                                            <div class="card-body">
+                                                <a href="product-detail.html">
+                                                    <h5>Odin</h5>
+                                                </a>
+                                                <h6>MACHINE GUNS</h6>
+                                                <p class="card-text">Aim down sights</p>
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <div class="btn-group">
+                                                        <a class="btn btn-sm btn-outline-secondary"
+                                                            href="product-detail.html">Xem chi tiết</a>
+                                                    </div>
+                                                    <small class="text-muted text-right">
+                                                        
+                                                        <b>1550</b>
+                                                    </small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+        
+                        <div class="col-md-6">
+                            <div class="card mb-4 shadow-sm">
+                                <a href="product-detail.html">
+                                    <img class="bd-placeholder-img card-img-top" width="100%" height="350"
+                                        src="assets/img/Bucky.png">
+                                </a>
+                                <div class="card-body">
+                                    <a href="product-detail.html">
+                                        <h5>Bucky</h5>
+                                    </a>
+                                    <h6>SHOTGUNS</h6>
+                                    <p class="card-text">Air burst</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="btn-group">
+                                            <a class="btn btn-sm btn-outline-secondary"
+                                                href="product-detail.html">Xem chi tiết</a>
+                                        </div>
+                                        <small class="text-muted text-right">
+                                            
+                                            <b>950</b>
+                                        </small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <div class="col-md-6">
+                            <div class="card mb-4 shadow-sm">
+                                <a href="product-detail.html">
+                                    <img class="bd-placeholder-img card-img-top" width="100%" height="350"
+                                        src="assets/img/Judge.png">
+                                </a>
+                                <div class="card-body">
+                                    <a href="product-detail.html">
+                                        <h5>Judge</h5>
+                                    </a>
+                                    <h6>SHOTGUNS</h6>
+                                    <p class="card-text"></p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="btn-group">
+                                            <a class="btn btn-sm btn-outline-secondary"
+                                                href="product-detail.html">Xem chi tiết</a>
+                                        </div>
+                                        <small class="text-muted text-right">
+                                            
+                                            <b>1850</b>
+                                        </small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <div class="col-md-6">
+                            <div class="card mb-4 shadow-sm">
+                                <a href="product-detail.html">
+                                    <img class="bd-placeholder-img card-img-top" width="100%" height="350"
+                                        src="assets/img/Guardian.png">
+                                </a>
+                                <div class="card-body">
+                                    <a href="product-detail.html">
+                                        <h5>Guardian</h5>
+                                    </a>
+                                    <h6>RIFLES</h6>
+                                    <p class="card-text">Aim down sights</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="btn-group">
+                                            <a class="btn btn-sm btn-outline-secondary"
+                                                href="product-detail.html">Xem chi tiết</a>
+                                        </div>
+                                        <small class="text-muted text-right">
+                                            
+                                            <b>2250</b>
+                                        </small>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card mb-4 shadow-sm">
+                            <a href="product-detail.html">
+                                <img class="bd-placeholder-img card-img-top" width="100%" height="350"
+                                    src="assets/img/Bulldog.png">
+                            </a>
+                            <div class="card-body">
+                                <a href="product-detail.html">
+                                    <h5>Bulldog</h5>
+                                </a>
+                                <h6>RIFLES</h6>
+                                <p class="card-text">Aim down sights</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <a class="btn btn-sm btn-outline-secondary"
+                                            href="product-detail.html">Xem chi tiết</a>
+                                    </div>
+                                    <small class="text-muted text-right">
+                                        
+                                        <b>2050</b>
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    <div class="row">
+        
+                        <div class="col-md-6">
+                            <div class="card mb-4 shadow-sm">
+                                <a href="product-detail.html">
+                                    <img class="bd-placeholder-img card-img-top" width="100%" height="350"
+                                        src="assets/img/Operator.png">
+                                </a>
+                                <div class="card-body">
+                                    <a href="product-detail.html">
+                                        <h5>Operator</h5>
+                                    </a>
+                                    <h6>SNIPER RIFLES</h6>
+                                    <p class="card-text">Aim Down Sights</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="btn-group">
+                                            <a class="btn btn-sm btn-outline-secondary"
+                                                href="product-detail.html">Xem chi tiết</a>
+                                        </div>
+                                        <small class="text-muted text-right">
+                                            
+                                            <b>4700</b>
+                                        </small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <div class="col-md-6">
+                            <div class="card mb-4 shadow-sm">
+                                <a href="product-detail.html">
+                                    <img class="bd-placeholder-img card-img-top" width="100%" height="350"
+                                        src="assets/img/Phantom.png">
+                                </a>
+                                <div class="card-body">
+                                    <a href="product-detail.html">
+                                        <h5>Phantom</h5>
+                                    </a>
+                                    <h6>RIFLES</h6>
+                                    <p class="card-text">Aim down sights</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="btn-group">
+                                            <a class="btn btn-sm btn-outline-secondary"
+                                                href="product-detail.html">Xem chi tiết</a>
+                                        </div>
+                                        <small class="text-muted text-right">
+                                            
+                                            <b>2900</b>
+                                        </small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <div class="col-md-6">
+                            <div class="card mb-4 shadow-sm">
+                                <a href="product-detail.html">
+                                    <img class="bd-placeholder-img card-img-top" width="100%" height="350"
+                                        src="assets/img/Sheriff.png">
+                                </a>
+                                <div class="card-body">
+                                    <a href="product-detail.html">
+                                        <h5>Sheriff</h5>
+                                    </a>
+                                    <h6>SIDEARMS</h6>
+                                    <p class="card-text"></p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="btn-group">
+                                            <a class="btn btn-sm btn-outline-secondary"
+                                                href="product-detail.html">Xem chi tiết</a>
+                                        </div>
+                                        <small class="text-muted text-right">
+                                            
+                                            <b>800</b>
+                                        </small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+        
+                        <div class="col-md-6">
+                            <div class="card mb-4 shadow-sm">
+                                <a href="product-detail.html">
+                                    <img class="bd-placeholder-img card-img-top" width="100%" height="350"
+                                        src="assets/img/Vandal.png">
+                                </a>
+                                <div class="card-body">
+                                    <a href="product-detail.html">
+                                        <h5>Vandal</h5>
+                                    </a>
+                                    <h6>RIFLES</h6>
+                                    <p class="card-text">Aim down sights </p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="btn-group">
+                                            <a class="btn btn-sm btn-outline-secondary"
+                                                href="product-detail.html">Xem chi tiết</a>
+                                        </div>
+                                        <small class="text-muted text-right">
+                                            
+                                            <b>2900</b>
+                                        </small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+        
+                                <div class="col-md-6">
+                            <div class="card mb-4 shadow-sm">
+                                <a href="product-detail.html">
+                                    <img class="bd-placeholder-img card-img-top" width="100%" height="350"
+                                        src="assets/img/Marshal.png">
+                                </a>
+                                <div class="card-body">
+                                    <a href="product-detail.html">
+                                        <h5>Marshal</h5>
+                                    </a>
+                                    <h6>SNIPER RIFLES</h6>
+                                    <p class="card-text">Aim down sights </p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="btn-group">
+                                            <a class="btn btn-sm btn-outline-secondary"
+                                                href="product-detail.html">Xem chi tiết</a>
+                                        </div>
+                                        <small class="text-muted text-right">
+                                            
+                                            <b>950</b>
+                                        </small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card mb-4 shadow-sm">
+                                <a href="product-detail.html">
+                                    <img class="bd-placeholder-img card-img-top" width="100%" height="350"
+                                        src="assets/img/Classic.png">
+                                </a>
+                                <div class="card-body">
+                                    <a href="product-detail.html">
+                                        <h5>Classic</h5>
+                                    </a>
+                                    <h6>SIDEARMS</h6>
+                                    <p class="card-text"> Burst </p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="btn-group">
+                                            <a class="btn btn-sm btn-outline-secondary"
+                                                href="product-detail.html">Xem chi tiết</a>
+                                        </div>
+                                        <small class="text-muted text-right">
+                                            
+                                            <b>0</b>
+                                        </small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <div class="card mb-4 shadow-sm">
+                                <a href="product-detail.html">
+                                    <img class="bd-placeholder-img card-img-top" width="100%" height="350"
+                                        src="assets/img/Ghost.png">
+                                </a>
+                                <div class="card-body">
+                                    <a href="product-detail.html">
+                                        <h5>Ghost</h5>
+                                    </a>
+                                    <h6>SIDEARMS</h6>
+                                    <p class="card-text">Silence </p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="btn-group">
+                                            <a class="btn btn-sm btn-outline-secondary"
+                                                href="product-detail.html">Xem chi tiết</a>
+                                        </div>
+                                        <small class="text-muted text-right">
+                                            
+                                            <b>500</b>
+                                        </small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <div class="col-md-6">
+                            <div class="card mb-4 shadow-sm">
+                                <a href="product-detail.html">
+                                    <img class="bd-placeholder-img card-img-top" width="100%" height="350"
+                                        src="assets/img/Frenzy.png">
+                                </a>
+                                <div class="card-body">
+                                    <a href="product-detail.html">
+                                        <h5>Frenzy</h5>
+                                    </a>
+                                    <h6>SIDEARMS</h6>
+                                    <p class="card-text"></p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="btn-group">
+                                            <a class="btn btn-sm btn-outline-secondary"
+                                                href="product-detail.html">Xem chi tiết</a>
+                                        </div>
+                                        <small class="text-muted text-right">
+                                            
+                                            <b>450</b>
+                                        </small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <div class="col-md-6">
+                            <div class="card mb-4 shadow-sm">
+                                <a href="product-detail.html">
+                                    <img class="bd-placeholder-img card-img-top" width="100%" height="350"
+                                        src="assets/img/Shorty.png">
+                                </a>
+                                <div class="card-body">
+                                    <a href="product-detail.html">
+                                        <h5>Shorty</h5>
+                                    </a>
+                                    <h6>SIDEARMS</h6>
+                                    <p class="card-text">Shotgun</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="btn-group">
+                                            <a class="btn btn-sm btn-outline-secondary"
+                                                href="product-detail.html">Xem chi tiết</a>
+                                        </div>
+                                        <small class="text-muted text-right">
+                                            
+                                            <b>150</b>
+                                        </small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <div class="col-md-6">
+                            <div class="card mb-4 shadow-sm">
+                                <a href="product-detail.html">
+                                    <img class="bd-placeholder-img card-img-top" width="100%" height="350"
+                                        src="assets/img/TacticalKnife.png">
+                                </a>
+                                <div class="card-body">
+                                    <a href="product-detail.html">
+                                        <h5>Knife</h5>
+                                    </a>
+                                    <h6>Melee</h6>
+                                    <p class="card-text"></p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="btn-group">
+                                            <a class="btn btn-sm btn-outline-secondary"
+                                                href="product-detail.html">Xem chi tiết</a>
+                                        </div>
+                                        <small class="text-muted text-right">
+                                            
+                                            <b>0</b>
+                                        </small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- row.// -->
+        </form>
+    </div>
+
+    <!-- footer -->
+    <footer class="footer mt-auto py-3">
+        <div class="container">
+            <span>Bản quyền © bởi <a href="index.html">TrungNimShop</a> - <script>document.write(new Date().getFullYear());</script>.</span>
+            <span class="text-muted">Hành trang tới Tương lai</span>
+
+            <p class="float-right">
+                <a href="#">Về đầu trang</a>
+            </p>
+        </div>
+    </footer>
+    <!-- end footer -->
+
+    
+    <script src="vendor/jquery/jquery-3.4.1.min.js"></script>
+    <script src="vendor/popperjs/popper.min.js"></script>
+    <script src="vendor/bootstrap/bootstrap-4.5.0-dist/js/bootstrap.min.js"></script>
+
+    
+    <script src="assets/js/app.js"></script>
+</body>
+</html>
